@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+code {
+    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+
+.fas {
+    cursor: pointer
+}
+
+.todo-list-item {
+    height: 50px;
+    border: 1px solid #dfe1e5;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer
+}
+
+.todo-list-container {
+    margin-top: 20px
+}
+
+.todo-list-time {
+    float: right;
+    font-size: 12px;
+    font-weight: 500
+}
+
+.todo-list-title {
+    font-size: 18px;
+    font-weight: 500
+}
+
+.todo-list-desc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.todo-btn-bar-west {
+    float: left;
+    color: #3566d3;
+    cursor: pointer
+}
+
+.todo-btn-bar-east {
+    float: right;
+    cursor: pointer
+}
+
+.todo-main-container {
+    border: 2px solid #dfe1e5;
+    border-radius: 5px;
+    padding: 10px
+}
+
+.todo-search-box {
+    border-radius: 20px;
+    background: #fff;
+    display: flex;
+    border: 1px solid #dfe1e5;
+    box-shadow: none;
+    height: 30px;
+    margin-top: 10px;
+    align-items: center
+}
+
+.todo-search-box input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    padding-left: 10px;
+    outline: none
+}
+
+.todo-btn-bar {
+    height: 30px
+}
+
+.todo-header {
+    font-size: 24px
+}
+
+.fa-plus-circle {
+    color: #3566d3
+}
+
+.fa-trash {
+    color: #a51f1e
+}
+
+.fa-search {
+    vertical-align: middle;
+    height: 16px;
+    width: 16px;
+    color: #a9a9a9;
+    padding-left: 10px
+}
+
+/*# sourceMappingURL=main.394b3ae6.chunk.css.map */
