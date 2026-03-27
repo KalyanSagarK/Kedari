@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanvika Sri - Name Reveal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gurajada&family=Ramabhadra&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --maroon: #800000;
+            --saffron: #FF9933;
+            --silk: #FFF8E7;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--silk);
+            font-family: 'Ramabhadra', sans-serif;
+            color: var(--maroon);
+            text-align: center;
+            overflow-x: hidden;
+        }
+		.invite-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 550px;
+            margin: 0 auto 30px;
+            padding: 0 15px;
+        }
+
+        .main-container {
+            border: 15px solid var(--gold);
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+        }
+
+        .blessing-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-bottom: 2px solid var(--saffron);
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .om-symbol {
+            font-size: 2.5rem;
+            color: var(--saffron);
+            margin: 5px 0;
+        }
+
+        .title {
+            font-family: 'Gurajada', serif;
+            font-size: 2.5rem;
+            margin: 5px 0;
+        }
+
+        /* Decorative Image Frame */
+        .baby-frame {
+            width: 220px;
+            height: 220px;
+            margin: 20px auto;
+            border-radius: 50%;
+            border: 8px double var(--gold);
+            padding: 10px;
+            background: white;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .baby-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Reveal Section */
+        .reveal-box {
+            margin: 40px auto;
+            max-width: 500px;
+        }
+
+        #reveal-btn {
+            background: linear-gradient(145deg, var(--saffron), var(--maroon));
+            color: white;
+            border: 2px solid var(--gold);
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-family: 'Ramabhadra', sans-serif;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+            transition: 0.3s;
+        }
+
+        #reveal-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(128, 0, 0, 0.5);
+        }
+
+        #name-display {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .final-name {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #C71585;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: zoomIn 1.5s ease-out;
+        }
+
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .event-info {
+            margin-top: 40px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: var(--maroon);
+            color: white;
+            padding: 30px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- <div class="blessing-header">గారి ఆశీస్సులతో..</div> -->
+        <div class="om-symbol">🕉️</div>
+        <h1 class="title">కొమ్మోజు వారి <br> నామకరణ మహోత్సవం</h1>
+		<section class="invite-text">
+            <p>మా ఇంటి మహాలక్ష్మికి పేరు పెట్టే ఈ శుభ సందర్భంలో,
+			మీరు మీ కుటుంబ సభ్యులతో కలిసి విచ్చేసి, మా చిన్నారిని ఆశీర్వదించవలసిందిగా కోరుతున్నాము.</p>
+        </section>
+        <div class="baby-frame">
+            <img src="Cherry.png" alt="Baby Photo">
+        </div>
+
+        <div class="reveal-box">
+            <button id="reveal-btn" onclick="revealName()">చిన్నారి పేరు తెలుసుకోండి ✨</button>
+            <div id="name-display">
+                <div style="font-size: 1.2rem; margin-bottom: 10px;">మా చిట్టితల్లి శుభనామం:</div>
+                <div class="final-name">తన్విక శ్రీ</div>
+                <div style="font-size: 1.8rem; color: var(--maroon);">(Tanvika Sri)</div>
+				 <div style="margin-top: 30px; padding: 20px; background: #fff; border-radius: 15px; border: 1px dashed var(--gold);">
+			<h3 style="color: var(--maroon); font-family: 'Gurajada', serif;">పేరు వెనుక ఉన్న అంతరార్థం:</h3>
+			<p><strong>తన్విక:</strong> శక్తి స్వరూపిణి అయిన పార్వతీ దేవి రూపం.</p>
+			<p><strong>శ్రీ:</strong> సకల సంపదలను ప్రసాదించే మహాలక్ష్మి స్వరూపం.</p>
+			<hr style="border: 0.5px solid var(--gold); width: 50%;">
+			<p style="font-style: italic;">"దైవచింతన మరియు సంప్రదాయాల కలయికగా ఈ నామకరణం చేయబడింది."</p>
+		</div>
+            </div>
+			<p style="margin-top: 20px; color: var(--rose-gold); font-weight: bold;">Kommoju Family 🌺</p>
+        </div>
+    </div>
+
+    <script>
+        function revealName() {
+            document.getElementById('reveal-btn').style.display = 'none';
+            document.getElementById('name-display').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
