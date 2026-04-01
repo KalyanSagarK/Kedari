@@ -259,16 +259,6 @@
     </audio>
     <script>
         function revealName() {
-            //1. సౌండ్ ప్లే చేయడం
-            var sound = document.getElementById("reveal-sound");
-            if (sound) {
-                sound.volume = 0.1; // 0.0 నుండి 1.0 వరకు (1.0 అంటే 100% వాల్యూమ్)
-                sound.currentTime = 0;
-                sound.play();
-            }
-            sound.play().catch(function (error) {
-                console.log("Audio play failed: ", error);
-            });
             // 1. పువ్వుల వర్షం (Flower Blast) కురిపించడం
             var duration = 3 * 1000;
             var animationEnd = Date.now() + duration;
@@ -282,6 +272,16 @@
                 var timeLeft = animationEnd - Date.now();
 
                 if (timeLeft <= 0) {
+                    //సౌండ్ ప్లే చేయడం
+                    var sound = document.getElementById("reveal-sound");
+                    if (sound) {
+                        sound.volume = 0.1; // 0.0 నుండి 1.0 వరకు (1.0 అంటే 100% వాల్యూమ్)
+                        sound.currentTime = 0;
+                        sound.play();
+                    }
+                    sound.play().catch(function (error) {
+                        console.log("Audio play failed: ", error);
+                    });
                     return clearInterval(interval);
                 }
 
