@@ -105,10 +105,7 @@
             box-shadow: 0 8px 20px rgba(128, 0, 0, 0.5);
         }
 
-        #name-display {
-            display: none;
-            margin-top: 5px;
-        }
+
 
         .final-name {
             margin: -20px 0 0 0;
@@ -128,6 +125,24 @@
             to {
                 opacity: 1;
                 transform: scale(1);
+            }
+        }
+
+        #name-display {
+            display: none;
+            margin-top: 5px;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
@@ -203,6 +218,7 @@
             font-weight: 100;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
@@ -223,8 +239,7 @@
         </div>
 
         <div class="reveal-box">
-            <button id="reveal-btn" onclick="revealName()">మా చిట్టితల్లి పేరు తెలుసుకోవడానికి ఇక్కడ నొక్కండి
-                👇</button>
+            <button id="reveal-btn" onclick="revealName()">మా చిట్టితల్లి పేరు తెలుసుకోవడానికి ఇక్కడ నొక్కండి👇</button>
             <div id="name-display">
                 <div style="font-size: 1.2rem; margin-bottom: 10px;">మా చిట్టితల్లి శుభనామం:</div>
                 <div class="final-name">
@@ -239,9 +254,44 @@
             <p style="margin-top: 20px; color: var(--rose-gold); font-weight: bold;">🌺 Kommoju Family 🌺</p>
         </div>
     </div>
-
+    <audio id="reveal-sound" preload="auto">
+        <source src="Thankyou.mp3" type="audio/mpeg">
+    </audio>
     <script>
         function revealName() {
+            //1. సౌండ్ ప్లే చేయడం
+            var sound = document.getElementById("reveal-sound");
+            if (sound) {
+                sound.volume = 0.1; // 0.0 నుండి 1.0 వరకు (1.0 అంటే 100% వాల్యూమ్)
+                sound.currentTime = 0;
+                sound.play();
+            }
+            sound.play().catch(function (error) {
+                console.log("Audio play failed: ", error);
+            });
+            // 1. పువ్వుల వర్షం (Flower Blast) కురిపించడం
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = { startVelocity: 30, spread: 50, ticks: 600, zIndex: 0 };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            var interval = setInterval(function () {
+                var timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                var particleCount = 50 * (timeLeft / duration);
+                // ఇక్కడ రంగులను మీ థీమ్ (Maroon, Gold, Pink) కి తగ్గట్టుగా మార్చుకోవచ్చు
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+                confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+            }, 250);
+
+            // 2. పేరును చూపించడం
             document.getElementById('reveal-btn').style.display = 'none';
             document.getElementById('name-display').style.display = 'block';
         }
