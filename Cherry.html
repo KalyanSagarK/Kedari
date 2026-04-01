@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="te">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,11 +23,13 @@
             text-align: center;
             overflow-x: hidden;
         }
-		.invite-text {
+
+        .invite-text {
             font-size: 1.1rem;
             line-height: 1.6;
             max-width: 550px;
-            margin: 0 auto 30px;
+            margin: 0 auto;
+            color: #147300;
             padding: 0 15px;
         }
 
@@ -47,27 +50,27 @@
         }
 
         .om-symbol {
-            font-size: 2.5rem;
+            font-size: 1.5rem;
             color: var(--saffron);
-            margin: 5px 0;
+            margin: 0;
         }
 
         .title {
             font-family: 'Gurajada', serif;
             font-size: 2.5rem;
-            margin: 5px 0;
+            margin: 0;
         }
 
         /* Decorative Image Frame */
         .baby-frame {
             width: 220px;
             height: 220px;
-            margin: 20px auto;
+            margin: 5px auto;
             border-radius: 50%;
             border: 8px double var(--gold);
             padding: 10px;
             background: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .baby-frame img {
@@ -79,15 +82,16 @@
 
         /* Reveal Section */
         .reveal-box {
-            margin: 40px auto;
+            margin: 0px auto;
             max-width: 500px;
         }
 
         #reveal-btn {
+            width: 350px;
             background: linear-gradient(145deg, var(--saffron), var(--maroon));
             color: white;
             border: 2px solid var(--gold);
-            padding: 15px 40px;
+            padding: 5px 25px;
             font-size: 1.5rem;
             font-family: 'Ramabhadra', sans-serif;
             border-radius: 50px;
@@ -103,20 +107,47 @@
 
         #name-display {
             display: none;
-            margin-top: 20px;
+            margin-top: 5px;
         }
 
         .final-name {
+            margin: -20px 0 0 0;
             font-size: 4rem;
             font-weight: bold;
             color: #C71585;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgb(195 255 0 / 33%);
             animation: zoomIn 1.5s ease-out;
         }
 
         @keyframes zoomIn {
-            from { opacity: 0; transform: scale(0.5); }
-            to { opacity: 1; transform: scale(1); }
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* మొబైల్ స్క్రీన్‌ల కోసం (Mobile Responsive Style) */
+        @media screen and (max-width: 600px) {
+            #reveal-btn {
+                width: 220px;
+                background: linear-gradient(145deg, var(--saffron), var(--maroon));
+                color: white;
+                border: 2px solid var(--gold);
+                padding: 5px;
+                font-size: 1.1rem;
+                font-family: 'Ramabhadra', sans-serif;
+                border-radius: 25px;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+                transition: 0.3s;
+                margin: 10px auto;
+                /* మొబైల్‌లో సెంటర్ అవ్వడానికి */
+            }
         }
 
         .event-info {
@@ -131,37 +162,59 @@
             color: white;
             padding: 30px 10px;
         }
+
+        /* తోరణం రిబ్బన్ (Toran Ribbon) */
+        .header-toran {
+            width: 100%;
+            height: 70px;
+            background-image: url('R.png');
+            /* మీరు పంపిన ఇమేజ్ లింక్ ఇక్కడ ఉంచండి */
+            background-repeat: repeat-x;
+            background-size: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .main-wrapper {
+            border: 12px double var(--gold);
+            min-height: 100vh;
+            padding: 140px 20px 20px 20px;
+            /* తోరణం కోసం పైన ఖాళీ */
+            box-sizing: border-box;
+            position: relative;
+        }
     </style>
 </head>
-<body>
 
+<body>
+    <div class="header-toran"></div>
     <div class="main-container">
-        <!-- <div class="blessing-header">గారి ఆశీస్సులతో..</div> -->
         <div class="om-symbol">🕉️</div>
-        <h1 class="title">కొమ్మోజు వారి <br> నామకరణ మహోత్సవం</h1>
-		<section class="invite-text">
-            <p>మా ఇంటి మహాలక్ష్మికి పేరు పెట్టే ఈ శుభ సందర్భంలో,
-			మీరు మీ కుటుంబ సభ్యులతో కలిసి విచ్చేసి, మా చిన్నారిని ఆశీర్వదించవలసిందిగా కోరుతున్నాము.</p>
+        <h1 class="title">
+            కొమ్మోజు వారి బారసాల మహోత్సవం
+        </h1>
+        <section class="invite-text">
+            మా ఇంటి మహాలక్ష్మికి పేరు పెట్టే ఈ శుభ సందర్భంలో,
+            మీరు మీ కుటుంబ సభ్యులతో కలిసి విచ్చేసి, మా చిన్నారిని ఆశీర్వదించవలసిందిగా కోరుతున్నాము.
         </section>
         <div class="baby-frame">
             <img src="Cherry.png" alt="Baby Photo">
         </div>
 
         <div class="reveal-box">
-            <button id="reveal-btn" onclick="revealName()">చిన్నారి పేరు తెలుసుకోండి ✨</button>
+            <button id="reveal-btn" onclick="revealName()">మా చిట్టితల్లి పేరు తెలుసుకోవడానికి ఇక్కడ నొక్కండి
+                👇</button>
             <div id="name-display">
                 <div style="font-size: 1.2rem; margin-bottom: 10px;">మా చిట్టితల్లి శుభనామం:</div>
-                <div class="final-name">తన్విక శ్రీ</div>
-                <div style="font-size: 1.8rem; color: var(--maroon);">(Tanvika Sri)</div>
-				 <div style="margin-top: 30px; padding: 20px; background: #fff; border-radius: 15px; border: 1px dashed var(--gold);">
-			<h3 style="color: var(--maroon); font-family: 'Gurajada', serif;">పేరు వెనుక ఉన్న అంతరార్థం:</h3>
-			<p><strong>తన్విక:</strong> శక్తి స్వరూపిణి అయిన పార్వతీ దేవి రూపం.</p>
-			<p><strong>శ్రీ:</strong> సకల సంపదలను ప్రసాదించే మహాలక్ష్మి స్వరూపం.</p>
-			<hr style="border: 0.5px solid var(--gold); width: 50%;">
-			<p style="font-style: italic;">"దైవచింతన మరియు సంప్రదాయాల కలయికగా ఈ నామకరణం చేయబడింది."</p>
-		</div>
+                <div class="final-name">
+                    <div>తన్విక శ్రీలలిత</div>
+                    <div style="margin-top: -20px; font-size: 1.5rem; color: #1600d9;">(Tanvika SriLalitha)</div>
+                </div>
+                <p style="font-style: italic;color:#147300">"దైవచింతన మరియు సంప్రదాయాల కలయికగా ఈ నామకరణం చేయబడింది."</p>
             </div>
-			<p style="margin-top: 20px; color: var(--rose-gold); font-weight: bold;">Kommoju Family 🌺</p>
+            <p style="margin-top: 20px; color: var(--rose-gold); font-weight: bold;">🌺 Kommoju Family 🌺</p>
         </div>
     </div>
 
@@ -173,4 +226,5 @@
     </script>
 
 </body>
+
 </html>
